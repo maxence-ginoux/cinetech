@@ -1,0 +1,13 @@
+.movie {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+  
+.movie h2 {
+    margin-top: 0;
+}
+
+.movie img {
+    max-width: 100%;
+}
