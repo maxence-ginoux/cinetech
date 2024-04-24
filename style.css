@@ -1,27 +1,57 @@
-.movie {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-  
-.movie h2 {
-    margin-top: 0;
+/* Styles pour le header */
+header {
+    background-color: black; /* Ajoute une couleur de fond pour le header */
 }
 
-.movie img {
-    max-width: 100%;
+.header-content {
+    display: flex; /* Utilise Flexbox pour aligner horizontalement les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 10px; /* Ajoute de l'espace intérieur */
 }
 
-#authContainer {
-    max-width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+/* Styles pour le logo */
+header img {
+    width: 130px; /* Ajuste la taille du logo selon vos besoins */
+    margin-right: 20px; /* Ajoute un espacement à droite du logo */
 }
 
-input, button {
-    display: block;
-    margin: 10px auto;
+/* Styles pour la barre de recherche */
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 20px; /* Ajoute un espacement à droite de la barre de recherche */
+}
+
+/* Styles pour les boutons */
+header button {
+    margin-right: 10px; /* Ajoute un espacement entre les boutons */
+    border-radius: 20px;
+}
+
+/* Styles pour la navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0; /* Réinitialise la marge */
+    padding: 0; /* Réinitialise le padding */
+}
+
+nav ul li {
+    display: inline-block; /* Affiche les éléments en ligne */
+    margin-right: 10px; /* Ajoute un espacement entre les éléments de la navigation */
+    
+}
+
+#searchButton {
+    padding: 5px 10px; /* Ajoute un espacement interne */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    background-color: #f8f9fa; /* Ajoute une couleur de fond */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 10px; /* Ajoute un espacement à droite de la barre de recherche */
+    padding: 5px; /* Ajoute un espacement interne */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    border-radius: 20px;
 }

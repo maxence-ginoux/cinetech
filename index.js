@@ -76,3 +76,4 @@ searchInput.addEventListener('input', function() {
 
 // Appeler la fonction pour récupérer les films populaires et les afficher au chargement de la page
 fetchPopularMovies();
+
