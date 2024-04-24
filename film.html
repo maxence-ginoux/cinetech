@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinetech</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <label for="sortSelect">Trier par :</label>
+            <select id="sortSelect">
+                <option value="popularity">Popularité</option>
+                <option value="release_date">Date de sortie</option>
+            </select>
+            <button id="sortButton">Trier</button>
+            <div class="row" id="films"></div>
+            <button id="prevPageBtn">Page précédente</button>
+            <button id="nextPageBtn">Page suivante</button>
+        </div>
+    </main>
+    <script src="film.js"></script>
+    <script src=""></script>
+</body>
+</html>

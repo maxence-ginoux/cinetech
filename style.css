@@ -1,0 +1,35 @@
+.movie {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+  
+.movie h2 {
+    margin-top: 0;
+}
+
+.movie img {
+    max-width: 100%;
+}
+body {
+    background-color: black !important; /* Fond noir */
+    color: white; /* Couleur du texte blanc */  
+}
+
+.card {
+    background-color: #333 !important; /* Couleur de fond plus foncée pour les cartes */
+    color: white; /* Couleur du texte blanc */
+}
+
+/* Styles pour les boutons */
+button {
+    background-color: #333; /* Couleur de fond des boutons */
+    color: white; /* Couleur du texte blanc */
+    border: none; /* Supprimer les bordures */
+    padding: 10px 20px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur de souris */
+}
+
+button:hover {
+    background-color: #555; /* Couleur de fond des boutons au survol */
+}
