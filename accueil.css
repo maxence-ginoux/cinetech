@@ -88,12 +88,11 @@ nav ul li a:hover{
 }
 /**** FIN DU HEADER ****/
 
-
+/**** DEBUT DU MAIN ****/
 main{
     background-color: black;
     color: white;
 }
-
 
 main img{
     max-width: 100%;
@@ -105,9 +104,9 @@ main h2{
     font-weight: normal;
     font-size: 16px;
 }
+/**** FIN DU MAIN ****/
 
-
-/**** grille d'affichage ****/
+/**** DEBUT DE LA GRILLE D'AFFICHAGE ****/
 .wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -133,3 +132,8 @@ main h2{
         grid-template-columns: repeat(1, 1fr);
     }
 }
+/**** FIN DE LA GRILLE D'AFFICHAGE ****/
+
+/**** DEBUT DU FOOTER ****/
+
+/**** FIN DU FOOTER ****/
