@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+}
+
+/**** DEBUT DU HEADER ****/
+header {
+    background-color: #303134; /* Ajoute une couleur de fond pour le header */
+}
+
+.header-content {
+    display: flex; /* Utilise Flexbox pour aligner horizontalement les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 10px; /* Ajoute de l'espace intérieur */
+}
+
+/* Styles pour le logo */
+header img {
+    width: 150px; /* Ajuste la taille du logo selon vos besoins */
+    margin-right: 20px; /* Ajoute un espacement à droite du logo */
+}
+
+/* Styles pour la barre de recherche */
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 20px; /* Ajoute un espacement à droite de la barre de recherche */
+}
+
+/* Styles pour les boutons */
+header button {
+    margin-right: 10px; /* Ajoute un espacement entre les boutons */
+    border-radius: 20px;
+    font-family: "Play", sans-serif;
+    background-color: red;
+}
+
+header button a{
+    color: black;
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+}
+
+header button a:hover{
+    color: black;
+    font-size: 22px; /* Taille de la police au survol */
+    text-decoration: none;
+}
+
+/* Styles pour la navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0; /* Réinitialise la marge */
+    padding: 0; /* Réinitialise le padding */
+}
+
+nav ul li{
+    display: inline-block; /* Affiche les éléments en ligne */
+    margin-right: 50px; /* Ajoute un espacement entre les éléments de la navigation */
+    margin-left: 50px;
+}
+
+nav ul li a{
+    color: red;
+    font-family: "Play", sans-serif;
+    font-size: 22px;
+}
+
+nav ul li a:hover{
+    color: red;
+    font-size: 30px; /* Taille de la police au survol */
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+    background-color: #303134;
+    text-decoration: none;
+}
+
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 10px; /* Ajoute un espacement à droite de la barre de recherche */
+    padding: 5px; /* Ajoute un espacement interne */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    border-radius: 20px;
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+/**** FIN DU HEADER ****/
+
+
+main{
+    background-color: black;
+    color: white;
+}
+
+
+main img{
+    max-width: 100%;
+    display: block;
+}
+
+main h2{
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+
+/**** grille d'affichage ****/
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
