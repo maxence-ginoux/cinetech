@@ -99,10 +99,19 @@ main img{
     display: block;
 }
 
-main h2{
+main h1{
     text-align: center;
     font-weight: normal;
-    font-size: 16px;
+    padding: 40px 0px;
+}
+
+main p{
+    padding: 40px;
+}
+
+.video-container{
+    display: flex;
+    justify-content: center;
 }
 /**** FIN DU MAIN ****/
 
