@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Paytone+One&family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>Cinetech</title>
 </head>
 <body>
@@ -29,12 +28,31 @@
     </header>
     <main>
         <div id="searchResults"></div>
-        <div class="container">
-            <div class="row" id="films"></div>
+        <div class="buttons">
+            <button data-tv="top_rated">Les mieux notés</button>
+            <button data-tv="popular" class="active">Les plus populaires</button>
+            <button data-tv="airing_today">Séries actuelles</button>
+            <button data-tv="on_the_air">Ce soir à la TV</button>
+        </div>
+        <div class="wrapper">
+            <!-- <div class="tv-show">
+                <h2>Mon titre</h2>
+            <div class="tv-show_img">
+                <img src="https://image.tmdb.org/t/p/w500//9PFonBhy4cQy7Jz20NpMygczOkv.jpg">
+                <div class="note">
+                    67%
+                </div>
+            </div> -->
+        </div>
+        <div class="popup">
+            <div class="popup_img"></div>
+            <div class="popup_txt">
+                <h3></h3>
+                <p></p>
+            </div>
+            <div class="close" title="fermer">❌</div>
         </div>
     </main>
     <script src="index.js"></script>
-    <script src="authentication.js"></script>
-    <script src="search.js"></script>
 </body>
 </html>
