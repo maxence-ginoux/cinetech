@@ -32,6 +32,11 @@ header button {
     font-family: "Play", sans-serif;
     background-color: red;
 }
+.btn-favori{
+    width: 20px;
+    height: 20px;
+    
+}
 
 header button a{
     color: black;
@@ -91,7 +96,9 @@ nav ul li a:hover{
 /**** DEBUT DU MAIN ****/
 main{
     background-color: black;
-    color: white;
+    color: red;
+    font-family: play;
+    
 }
 
 main img{
@@ -144,5 +151,37 @@ main p{
 /**** FIN DE LA GRILLE D'AFFICHAGE ****/
 
 /**** DEBUT DU FOOTER ****/
+.img-footer{
+    width: 20px;
+    height: 20px;
+
+}
+.alignage{
+    display:flex;
+    gap: 6px;
+}
+footer{
+    background-color: #303134;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}
+footer ul{
+    display: flex;
+}
+   
+
+footer ul li a{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Play", sans-serif;
+    color: red;
+}
+footer ul li{
+    list-style-type: none;
+    
+    
+
+}
 
 /**** FIN DU FOOTER ****/
