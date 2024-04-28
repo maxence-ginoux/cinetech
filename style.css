@@ -1,35 +1,244 @@
-.movie {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-  
-.movie h2 {
-    margin-top: 0;
+*{
+    margin: 0;
 }
 
-.movie img {
-    max-width: 100%;
-}
-body {
-    background-color: black !important; /* Fond noir */
-    color: white; /* Couleur du texte blanc */  
+/**** DEBUT DU HEADER ****/
+header {
+    background-color: #303134; /* Ajoute une couleur de fond pour le header */
 }
 
-.card {
-    background-color: #333 !important; /* Couleur de fond plus foncée pour les cartes */
-    color: white; /* Couleur du texte blanc */
+.header-content {
+    display: flex; /* Utilise Flexbox pour aligner horizontalement les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 10px; /* Ajoute de l'espace intérieur */
+}
+
+/* Styles pour le logo */
+header img {
+    width: 150px; /* Ajuste la taille du logo selon vos besoins */
+    margin-right: 20px; /* Ajoute un espacement à droite du logo */
+}
+
+/* Styles pour la barre de recherche */
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 20px; /* Ajoute un espacement à droite de la barre de recherche */
 }
 
 /* Styles pour les boutons */
-button {
-    background-color: #333; /* Couleur de fond des boutons */
-    color: white; /* Couleur du texte blanc */
-    border: none; /* Supprimer les bordures */
-    padding: 10px 20px; /* Espacement intérieur */
-    cursor: pointer; /* Curseur de souris */
+header button {
+    margin-right: 10px; /* Ajoute un espacement entre les boutons */
+    border-radius: 20px;
+    font-family: "Play", sans-serif;
+    background-color: red;
 }
 
-button:hover {
-    background-color: #555; /* Couleur de fond des boutons au survol */
+header button a{
+    color: black;
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+}
+
+header button a:hover{
+    color: black;
+    font-size: 22px; /* Taille de la police au survol */
+    text-decoration: none;
+}
+
+/* Styles pour la navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0; /* Réinitialise la marge */
+    padding: 0; /* Réinitialise le padding */
+}
+
+nav ul li{
+    display: inline-block; /* Affiche les éléments en ligne */
+    margin-right: 50px; /* Ajoute un espacement entre les éléments de la navigation */
+    margin-left: 50px;
+}
+
+nav ul li a{
+    color: red;
+    font-family: "Play", sans-serif;
+    font-size: 22px;
+}
+
+nav ul li a:hover{
+    color: red;
+    font-size: 30px; /* Taille de la police au survol */
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+    background-color: #303134;
+    text-decoration: none;
+}
+
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 10px; /* Ajoute un espacement à droite de la barre de recherche */
+    padding: 5px; /* Ajoute un espacement interne */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    border-radius: 20px;
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+/**** FIN DU HEADER ****/
+main{
+    background-color: black;
+}
+/**** Styles pour les bouton du main ****/
+main button{
+    background: black;
+    color: red;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: "Play", sans-serif;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+
+.buttons button:hover, .buttons button:active {
+    background: red;
+    color: #303134;
+}
+
+
+main img{
+    max-width: 100%;
+    display: block;
+}
+
+main h2{
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/**** grille d'affichage ****/
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/**** détails des séries TV ****/
+.film {
+    cursor: pointer;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.film_img {
+    position: relative;
+}
+
+.film_img::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(315deg, white 0%, red 100%);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.film:hover .tv-show_img::before {
+    opacity: 0.5;
+}
+
+.note{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: wheat;
+    transform: translateX(120%);
+    transition: 1s all ease-in-out;
+}
+.film:hover .note {
+    transform: translateX(0);
+}
+
+/**** fenêtre popup ****/
+
+.popup {
+    position: fixed;
+    background: white;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 30px #303134;
+    transform: translate(-50%, 100%);
+    transition: 1s all ease-in-out;
+    display: none; /* Caché par défaut */
+}
+
+.popup.active {
+    transform: translate(-50%, -50%);
+    display: flex; /* Afficher lorsque la classe active est ajoutée */
+}
+.popup_img {
+    width: 40%;
+}
+.popup_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.popup_txt {
+    width: 60%;
+    padding: 25px;
+}
+.popup_txt h3 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 50px;
+}
+    
+.popup_txt p {
+    text-align: center;
+    line-height: 30px;
+}
+
+
+/**** bouton de fermeture de la popup ****/
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: 2s all ease-in-out;
+}
+.close:hover {
+    transform: rotate(360deg) scale(1.2);
 }
