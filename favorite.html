@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Paytone+One&family=Play:wght@400;700&display=swap" rel="stylesheet">
+        <title>Cinetech</title>
+    </head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="assets/logo.png" alt="">
+            <input type="text" id="searchInput" placeholder="Rechercher...">
+            
+            
+            <nav id="navBar">
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="film.html">Films</a></li>
+                    <li><a href="serie.html">Séries</a></li>
+                </ul>
+            </nav>
+            <button><img class="btn-favori"src="assets/favori.png" alt="favori"></button>
+            <button><a href="connection.html">Connexion</a></button>
+        </div>
+    </header>
+    <main class="mainConnection">
+        <!-- Conteneur pour afficher les films favoris -->
+        <div class="container">
+            <div class="row" id="favoriteMovies"></div>
+        </div>
+    </main>
+    <footer class="footer-section">
+        <p>Merci de votre visite ! nous vous souhaitons de revenir au plus vite :D </p>
+
+        <section>
+            <div>
+                <h3>CINETECH</h3>
+                <ul class="alignage">
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="film.html">Films</a></li>
+                    <li><a href="serie.html">Séries</a></li>
+                </ul>
+            </div>
+
+            <img src="assets/logo.png" alt="">
+            
+            <div>
+                <h3>Suivez-nous</h3>
+                <div class="img-container">
+                    <img class="img-footer"src="assets\facebook.png" alt="facebook">
+                    <img class="img-footer"src="assets/instagram.png" alt="instagram">
+                    <img class="img-footer"src="assets/twitter.png" alt="twitter">
+                </div>
+            </div>
+       </section>
+    </footer>
+    <script src="favorite.js"></script>
+</body>
+</html>

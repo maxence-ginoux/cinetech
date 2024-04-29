@@ -58,7 +58,12 @@ function appelTvShow(argument) {
         .then(data => {
             popup.querySelector(".popup_img").innerHTML = `<img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="">`;  // le poster dans .popup_img
             popup.querySelector(".popup_txt h3").innerHTML = data.name;                                                              // le nom de la série dans le h3
-            popup.querySelector(".popup_txt p").innerHTML = data.overview;                                                           // la description de la série dans le paragraphe
+            // Formater la date de sortie
+            const releaseDate = new Date(data.first_air_date);
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const formattedReleaseDate = releaseDate.toLocaleDateString('fr-FR', options);
+            popup.querySelector(".popup_txt h2").innerHTML = "Date de sortie : " + formattedReleaseDate;
+            popup.querySelector(".popup_txt p").innerHTML = data.overview;                                                           // la description de la série dans le paragraphe 
         })
         .catch(error => {
             console.error("Erreur : ", error);
