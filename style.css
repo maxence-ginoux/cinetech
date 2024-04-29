@@ -157,6 +157,9 @@ main h2{
     position: relative;
 }
 
+.tv-show_img img{
+    border-radius: 10px;
+}
 .tv-show_img::before {
     content: "";
     position: absolute;
@@ -242,3 +245,85 @@ main h2{
 .close:hover {
     transform: rotate(360deg) scale(1.2);
 }
+
+/**** DEBUT DU FORMULAIRE D'INSCRIPTION ****/
+.mainConnection {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Pour centrer verticalement si nécessaire */
+    height: 100vh; /* Assure que le main prend toute la hauteur de l'écran */
+    font-family: "play";
+    color: red;
+}
+.mainConnection *{
+    margin: 10px;
+}
+.create-account-link {
+    color: red; /* Définit la couleur du texte en rouge */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.mainConnection input{
+    border-radius: 10px;
+}
+/**** FIN DU FORMULAIRE D'INSCRIPTION ****/
+
+/**** DEBUT DU FOOTER ****/
+
+.alignage{
+    display:flex;
+}
+
+footer{
+    background-color: #303134;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+footer ul{
+    display: flex;
+}
+
+section div h3{
+    text-align: center;
+    font-family: 'play';
+}
+
+footer div ul li a{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Play", sans-serif;
+    color: red;
+    
+}
+footer div ul li{
+    list-style-type: none;
+    margin: 20px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.img-container img {
+    height: 40px;
+    margin: 20px;
+}
+
+footer img{
+    height: 130px;
+}
+
+footer p{
+    font-family: 'play';
+    margin: 10px 0px;
+    text-align: center;
+    
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+}
+/**** FIN DU FOOTER ****/
