@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="assets/logo.png" alt="">
+            <a href="accueil.html"><img src="assets/logo.png" alt=""></a>
             <input type="text" id="searchInput" placeholder="Rechercher...">
             
             
@@ -21,17 +21,21 @@
                     <li><a href="accueil.html">Accueil</a></li>
                     <li><a href="film.html">Films</a></li>
                     <li><a href="serie.html">Séries</a></li>
+                    <li><a href="favorite.html">Favoris</a></li>
                 </ul>
             </nav>
-            <button><img class="btn-favori"src="assets/favori.png" alt="favori"></button>
+            <a href="favorite.html"><img src="assets/favori.png" class="imgFavorite" alt="favoris"></a>
             <button><a href="connection.html">Connexion</a></button>
         </div>
     </header>
-    <main class="mainConnection">
-        <!-- Conteneur pour afficher les films favoris -->
-        <div class="container">
-            <div class="row" id="favoriteMovies"></div>
-        </div>
+    <main>
+        <div id="searchResults"></div>
+        <section class="mainConnection">
+            <h1>Mes Favoris</h1>
+            <div class="container1">
+                <ul id="favoritesList"></ul>
+            </div>
+        </section>
     </main>
     <footer class="footer-section">
         <p>Merci de votre visite ! nous vous souhaitons de revenir au plus vite :D </p>
@@ -59,5 +63,6 @@
        </section>
     </footer>
     <script src="favorite.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

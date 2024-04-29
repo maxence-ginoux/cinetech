@@ -7,10 +7,10 @@ function createAccount() {
     // Ici, vous pouvez effectuer des vérifications supplémentaires, par exemple, avec une base de données d'utilisateurs
     // Pour cet exemple, nous utilisons juste une comparaison de chaînes simples pour l'adresse e-mail et le mot de passe
     if (email && username && password) {
-        localStorage.setItem('email', email);
         localStorage.setItem('username', username);
         localStorage.setItem('password', password);
         alert('Compte créé avec succès !');
+        window.location.href = "accueil.html";
     } else {
         alert('Merci de remplir tous les champs !');
     }
@@ -21,22 +21,22 @@ function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    const storedUsername = localStorage.getItem('username');
-    const storedPassword = localStorage.getItem('password');
+    const storedUsername = localStorage.getItem('password');
+    const storedPassword = localStorage.getItem('username');
 
     if (username === storedUsername && password === storedPassword) {
-        alert('Login successful!');
+        alert('Connexion réussi !');
         localStorage.setItem('loggedIn', true);
-        // Rediriger l'utilisateur vers une autre page ou effectuer d'autres actions après la connexion réussie
+        window.location.href = "accueil.html";
     } else {
-        alert('Invalid username or password!');
+        alert('Pseudo ou mot de passe incorrect !');
     }
 }
 
 // Fonction de déconnexion
 function logout() {
     localStorage.removeItem('loggedIn');
-    alert('Logged out successfully!');
+    alert('Déconnexion réussi !');
 }
 
 // Vérifier l'état d'authentification au chargement de la page

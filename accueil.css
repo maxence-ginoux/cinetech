@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+}
+
+/**** DEBUT DU HEADER ****/
+header {
+    background-color: #303134; 
+}
+
+.header-content {
+    display: flex; /* Utilise Flexbox pour aligner horizontalement les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 10px; 
+}
+
+/* Styles pour le logo */
+header img {
+    width: 150px; 
+    margin-right: 20px; 
+}
+
+/* Styles pour la barre de recherche */
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 20px; 
+}
+
+/* Styles pour les boutons */
+header button {
+    margin-right: 10px; 
+    border-radius: 20px;
+    font-family: "Play", sans-serif;
+    background-color: red;
+    font-size: 20px;
+}
+
+header button a{
+    color: black;
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+}
+
+header button a:hover{
+    color: black;
+    font-size: 22px; 
+    text-decoration: none;
+}
+
+/* Styles pour la navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+}
+
+nav ul li{
+    display: inline-block; /* Affiche les éléments en ligne */
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+nav ul li a{
+    color: red;
+    font-family: "Play", sans-serif;
+    font-size: 22px;
+}
+
+nav ul li a:hover{
+    color: red;
+    font-size: 30px; 
+    transition: color 0.3s, font-size 0.3s; /* Transition fluide */
+    background-color: #303134;
+    text-decoration: none;
+}
+
+#searchInput {
+    flex: 1; /* Fait en sorte que la barre de recherche occupe tout l'espace disponible */
+    margin-right: 10px; 
+    padding: 5px;
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+}
+
+.imgFavorite{
+    height: 40px;
+    width: 40px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+
+/**** FIN DU HEADER ****/
+
+/**** DEBUT DU MAIN ****/
+main{
+    background-color: black;
+    color: red;
+    font-family: play;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.titleContainer{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main img{
+    max-width: 100%;
+    display: block;
+}
+
+main h1{
+    text-align: center;
+    font-weight: bolder;
+    padding: 40px 0px;
+}
+
+main p{
+    padding: 40px;
+}
+
+.video-container{
+    display: flex;
+    justify-content: center;
+}
+/**** FIN DU MAIN ****/
+
+/**** DEBUT DE LA GRILLE D'AFFICHAGE ****/
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/**** FIN DE LA GRILLE D'AFFICHAGE ****/
+
+/**** DEBUT DU FOOTER ****/
+
+.alignage{
+    display:flex;
+}
+
+footer{
+    background-color: #303134;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+footer ul{
+    display: flex;
+}
+
+section h3{
+    text-align: center;
+    font-family: 'play';
+}
+
+footer ul li a{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Play", sans-serif;
+    color: red;
+    
+}
+footer ul li{
+    list-style-type: none;
+    margin: 20px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.img-container img {
+    height: 40px;
+    margin: 20px;
+}
+
+footer img{
+    height: 130px;
+}
+
+footer p{
+    font-family: 'play';
+    margin: 10px 0px;
+    text-align: center;
+    
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+}
+/**** FIN DU FOOTER ****/

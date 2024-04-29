@@ -1,35 +1,32 @@
-// Fonction pour ajouter un film aux favoris
-function addToFavorites(event) {
-    const movieId = event.target.dataset.id;
-    const movieDetails = getMovieDetails(movieId);
-    let favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
-    favoriteMovies.push(movieDetails);
-    localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
-    alert('Le film a été ajouté aux favoris !');
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve favorites from local storage
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    console.log('Favorites from local storage:', favorites);
+    
+    // Display favorites
+    const favoritesList = document.getElementById('favoritesList');
+    favorites.forEach(movieData => {
+      // Create elements to display movie information
+      const listItem = document.createElement('li');
+      const img = document.createElement('img');
+      const name = document.createElement('div');
+      const des = document.createElement('div');
+      
+      // Set attributes and innerHTML for each element
+      img.src = `https://image.tmdb.org/t/p/original${movieData.poster_path}`;
+      img.alt = movieData.original_title;
+      name.textContent = movieData.original_title;
+      des.textContent = movieData.overview;
+      
 
-// Fonction pour afficher les films favoris sur la page "favory.html"
-function displayFavoriteMovies() {
-    const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
-    const favoriteMoviesContainer = document.getElementById('favoriteMovies');
-
-    favoriteMovies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        // Construire le contenu HTML pour afficher les détails du film
-        movieElement.innerHTML = `
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img class="card-img-top" src="${movie.poster_path}" alt="${movie.title} Poster">
-                    <div class="card-body">
-                        <h5 class="card-title">${movie.title}</h5>
-                        <!-- Afficher d'autres détails du film ici -->
-                    </div>
-                </div>
-            </div>
-        `;
-        favoriteMoviesContainer.appendChild(movieElement);
+      
+      
+      // Append elements to list item
+      listItem.appendChild(img);
+      listItem.appendChild(name);
+      listItem.appendChild(des);
+      
+      // Append list item to favorites list
+      favoritesList.appendChild(listItem);
     });
-}
-
-// Appeler la fonction pour afficher les films favoris lors du chargement de la page
-displayFavoriteMovies();
+});

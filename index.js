@@ -58,17 +58,33 @@ function appelTvShow(argument) {
         .then(data => {
             popup.querySelector(".popup_img").innerHTML = `<img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="">`;  // le poster dans .popup_img
             popup.querySelector(".popup_txt h3").innerHTML = data.name;                                                              // le nom de la série dans le h3
-            // Formater la date de sortie
             const releaseDate = new Date(data.first_air_date);
             const options = { day: 'numeric', month: 'long', year: 'numeric' };
             const formattedReleaseDate = releaseDate.toLocaleDateString('fr-FR', options);
             popup.querySelector(".popup_txt h2").innerHTML = "Date de sortie : " + formattedReleaseDate;
             popup.querySelector(".popup_txt p").innerHTML = data.overview;                                                           // la description de la série dans le paragraphe 
+
+            // Calcul de la note moyenne (à titre d'exemple, je suppose que la note moyenne est stockée dans data.vote_average)
+            const averageRating = data.vote_average;
+
+            // Sélection de toutes les étoiles
+            const stars = document.querySelectorAll(".star");
+
+            // Parcourir toutes les étoiles et mettre en surbrillance celles qui sont inférieures ou égales à la note moyenne
+            stars.forEach(star => {
+                const value = parseInt(star.getAttribute("data-value"));
+                if (value <= averageRating) {
+                    star.classList.add("highlight");
+                } else {
+                    star.classList.remove("highlight");
+                }
+            });
         })
         .catch(error => {
             console.error("Erreur : ", error);
         });
 }
+
 
 // on déclare une fonction appelAPI qui va servir à aller chercher une collection de séries Tv et on lui passe un argument pour pouvoir personnaliser la requête, cet argument servira à passer le data-attribute data-tv dans l'URL de la requête
 function appelApi(argument) {
@@ -102,7 +118,7 @@ function appelApi(argument) {
         });
 }
 
-// sur la collection de boutons, on fait un forEach pour exploser cette collection et appliquer un click qui va servir à ...
+// sur la collection de boutons, on fait un forEach pour exploser cette collection
 buttons.forEach(function(singleButton) {
     singleButton.addEventListener("click", function() {
         buttons.forEach(function(button) {
@@ -120,8 +136,50 @@ close.addEventListener("click", function(){
     popup.classList.toggle("active");
 });
 
+// Fonction pour sauvegarder le commentaire dans le localStorage
+function sauvegarderCommentaire(commentaire) {
+    // Vérifier si le localStorage est pris en charge par le navigateur
+    if (typeof(Storage) !== "undefined") {
+        // Vérifier s'il y a déjà des commentaires dans le localStorage
+        let commentaires = localStorage.getItem("commentaires");
+        if (commentaires === null) {
+            commentaires = []; // Si aucun commentaire n'est trouvé, initialiser un tableau vide
+        } else {
+            commentaires = JSON.parse(commentaires); // Si des commentaires sont déjà présents, les charger depuis le localStorage
+        }
+        // Ajouter le nouveau commentaire à la liste des commentaires
+        commentaires.push(commentaire);
+        // Sauvegarder la liste mise à jour des commentaires dans le localStorage
+        localStorage.setItem("commentaires", JSON.stringify(commentaires));
+    } else {
+        console.error("LocalStorage n'est pas pris en charge par ce navigateur.");
+    }
+}
+
+// Fonction pour afficher les commentaires dans la popup
+function afficherCommentaires() {
+    // Vérifier s'il y a des commentaires dans le localStorage
+    const commentaires = localStorage.getItem("commentaires");
+    if (commentaires !== null) {
+        // Charger les commentaires depuis le localStorage et les afficher dans la popup
+        const parsedCommentaires = JSON.parse(commentaires);
+        // Afficher les commentaires dans la popup (par exemple, les ajouter à un élément HTML approprié)
+        // Ici, je vais juste les afficher dans la console à titre d'exemple
+        console.log(parsedCommentaires);
+    }
+}
+
+// Écouteur d'événements pour le bouton Soumettre
+document.getElementById("submitCommentBtn").addEventListener("click", function() {
+    // Récupérer le commentaire saisi par l'utilisateur
+    const commentaire = document.getElementById("commentInput").value;
+    // Sauvegarder le commentaire dans le localStorage
+    sauvegarderCommentaire(commentaire);
+    // Afficher les commentaires dans la popup
+    afficherCommentaires();
+});
+
 // Appeler la fonction pour récupérer les films populaires et les afficher au chargement de la page
 appelApi("popular");
 
-// Appeler la fonction pour récupérer les films populaires et les afficher au chargement de la page
-fetchPopularMovies();
+
